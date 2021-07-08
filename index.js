@@ -1,6 +1,7 @@
 const inquirer = require('inquirer')
 const Manager = require('./Manager')
 const Engineer = require('./Engineer')
+const Intern = require('./Intern')
 const template = require('./src/index')
 const fs = require('fs')
 const employeeList = []
@@ -54,13 +55,42 @@ function userPrompt() {
         }]).then(function (userResponse) {
             const newEmployee = new Engineer(userResponse.userName, userResponse.userId, userResponse.userEmail, userResponse.userGithub)
             employeeList.push(newEmployee)
-
+            
         
-            const renderedHTML = template(employeeList)
-            console.log(renderedHTML);
-            fs.writeFileSync('./dist/index.html', renderedHTML);
+            
+           
+        }).then(function () {
+            inquirer.prompt([{
+                type: 'input',
+                name: 'userName',
+                message: 'What is your Intern name?'
+            },
+            {
+                type: 'input',
+                name: 'userId',
+                message: 'What is your Intern ID?'
+            },
+            {
+                type: 'input',
+                name: 'userEmail',
+                message: 'What is your Intern email?'
+            },
+            {
+                type: 'input',
+                name: 'userSchool',
+                message: 'What school are they from?'
+            }]).then(function (userResponse) {
+                const newEmployee = new Intern(userResponse.userName, userResponse.userId, userResponse.userEmail, userResponse.userSchool)
+                employeeList.push(newEmployee)
+                
+                const renderedHTML = template(employeeList)
+                console.log(renderedHTML);
+                fs.writeFileSync('./dist/index.html', renderedHTML);
+            })
+           
+        
         })
-
+        
     })
 }
 
