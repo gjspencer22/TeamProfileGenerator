@@ -28,6 +28,14 @@ test('ID', () => {
   expect (employee.ID).toBe(testID);
 })
 
+test('Email', () => {
+  const testEmail = "Ted1234@email.com";
+  const employee2 = new Employee ("Ted", 1234,"Ted1234@email.com");
+  expect (employee2.Email).toBe(testEmail);
+})
+
+
+
 
 
 
@@ -41,16 +49,16 @@ test('ID', () => {
 
 // jest.mock('../lib/Potion.js');
 
-// test('creates an enemy object', () => {
-//   const enemy = new Enemy('goblin', 'sword');
+test('creates an enemy object', () => {
+  const enemy = new Enemy('goblin', 'sword');
 
-//   expect(enemy.name).toBe('goblin');
-//   expect(enemy.weapon).toBe('sword');
-//   expect(enemy.health).toEqual(expect.any(Number));
-//   expect(enemy.strength).toEqual(expect.any(Number));
-//   expect(enemy.agility).toEqual(expect.any(Number));
-//   expect(enemy.potion).toEqual(expect.any(Object));
-// });
+  expect(enemy.name).toBe('goblin');
+  expect(enemy.weapon).toBe('sword');
+  expect(enemy.health).toEqual(expect.any(Number));
+  expect(enemy.strength).toEqual(expect.any(Number));
+  expect(enemy.agility).toEqual(expect.any(Number));
+  expect(enemy.potion).toEqual(expect.any(Object));
+});
 
 // test("gets enemy's health value", () => {
 //   const enemy = new Enemy('goblin', 'sword');

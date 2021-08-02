@@ -9,39 +9,37 @@ function template(data) {
     <title>Profile</title>
     <link rel="styleshet" href="./style.css"
   </head>
-  <body>
-    <h1>My Team</h1>
-    <div class="members">
-      <div class="firstMember">
-        <h2 class="title">${data[0].getRole()}</h2>
-        <h4 class="name">Name: ${data[0].name}</h4>
-        <h4>ID: ${data[0].getId()}</h4>
-        <h4>Email: ${data[0].getEmail()}</h4>
-        <h4>Office Number: ${data[0].getOfficeNumber()}</h4>
+  <body syle ="background-color: aliceblue">
+    <h1 style="color: red; text-align: center">My Team</h1>
+    <div style="border: 1px solid;
+      background-color: rgb(159, 209, 207);
+      text-align: center">
+      <div id="firstMember">
+        <h2 style="color: green">${data[0].getRole()}</h2>
+        <h4 style="color: green">Name: ${data[0].name}</h4>
+        <h4 style="color: green">ID: ${data[0].getId()}</h4>
+        <a href="mailto:bill@gmail.com, ted@gmail.com, james@gmail.com"
+        <h4 style="color: green">Email: ${data[0].getEmail()}</h4>
+        </a>
+        <h4 style="color: green">Office Number: ${data[0].getOfficeNumber()}</h4>
       </div>
-      <div class="secondMember">
-        <h2 class="title">${data[1].getRole()}</h2>
-        <h4 class="name">Name: ${data[1].name}</h4>
+      <div id="secondMember">
+        <h2 id="title">${data[1].getRole()}</h2>
+        <h4 id="name">Name: ${data[1].name}</h4>
         <h4>ID: ${data[1].getId()}</h4>
-        <h4>Email: ${data[1].getEmail()}</h4>
+        <a href="mailto:bill@gmail.com, ted@gmail.com, james@gmail.com"
+        <h4>Email:${data[1].getEmail()}</h4>
+        </a>
         <h4>Github: ${data[1].getGithub()}</h4>
       </div>
-      <div class="thirdMember">
-        <h2 class="title">${data[2].getRole()}</h2>
-        <h4 class="name">Name: ${data[2].name}</h4>
+      <div id="thirdMember">
+        <h2 id="title">${data[2].getRole()}</h2>
+        <h4 id="name">Name: ${data[2].name}</h4>
         <h4>ID: ${data[2].getId()}</h4>
-        <h4>Email: ${data[2].getEmail()}</h4>
+        <a href="mailto:bill@gmail.com, ted@gmail.com, james@gmail.com"
+        <h4>Email:  ${data[2].getEmail()}</h4>
+        </a>
         <h4>School: ${data[2].getSchool()}</h4>
-      </div>
-      <div class="fourthMember">
-        <h4 class="name"></h4>
-        <h4 class="title"></h4>
-        <div class="subDiv"></div>
-      </div>
-      <div class="fifthMember">
-        <h4 class="name"></h4>
-        <h4 class="title"></h4>
-        <div class="subDiv"></div>
       </div>
     </div>
   </body>
